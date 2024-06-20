@@ -10,10 +10,10 @@ class HrEmployee(models.Model):
     @api.model_create_multi
     def create(self, vals_list):
         res = super().create(vals_list)
-        self.related_contact_ids.title = self.title
+        self.work_contact_id.title = self.title
         return res
 
     def write(self, vals):
         res = super().write(vals)
-        self.related_contact_ids.title = self.title
+        self.work_contact_id.title = self.title
         return res
